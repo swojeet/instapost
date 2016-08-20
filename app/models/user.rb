@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
 
   has_many :posts
+
+  has_many :comments
 end
