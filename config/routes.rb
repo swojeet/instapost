@@ -59,4 +59,6 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
+
+  routes :users, only: :show
 end

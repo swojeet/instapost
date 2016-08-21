@@ -11,10 +11,22 @@
 		<%= link_to 'Delete Post', post_path(post.id), method: :delete %>
 	<% end %>
 
+	<% if post.comments != nil %>
+		<%= post.comments.each do |comment| %>
+			<br />
+			<p><%= comment.user.name %>: <%= comment.text %></p>
+
+			<% if comment.user == current_user %>
+				<%= link_to 'Delete', post_comment_path(post_id: post.id, id: comment.id), method: :delete %>
+			<% end %>
+			<hr>
+		<% end %>
+	<% end %>
+
 	<% if user_signed_in? %>
 		<%= simple_form_for Comment.new, url: post_comments_path(post), method: :post do |f| %>
 			<%= f.input :text, label: 'Comment', placeholder: 'Add a comment...' %>
-			<%= f.submit 'Post', class: 'btn `btn-primary btn-block'  %>
+			<%= f.submit 'Post', class: 'btn btn-primary btn-block'  %>
 		<% end %>
 	<% end %>
 <% end %>
