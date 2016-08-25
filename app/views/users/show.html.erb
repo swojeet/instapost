@@ -1,8 +1,36 @@
-<%= image_tag @user.photo %>
-<%= @user.name %>
+<div class="prof_page">
+	<div class="prof_header">
+		<div class="row">
+			<div class="col-xs-4">
+				<%= image_tag @user.photo,class: 'prof_pic' %>
+			</div>
 
-<%= pluralize(@user.posts.count, 'post') %>
+			<div class="col-xs-8">
+				<div class="user_header">
+					<div class="row">
+						<div class="username">
+							<h1><%= @user.name %></h1>
+						</div>
 
-<% @user.posts.each do |post| %>
-	<%= image_tag post.photo %>
-<% end %>
+						<div class="col-xs-6">
+							<%= link_to 'Edit Profile', edit_user_registration_path(@user), class: 'user_edit_button btn btn-default bold_black' if user_signed_in? && @user==current_user %>
+						</div>
+					</div>
+				</div>
+
+				<span class="count"><%= pluralize(@user.posts.count, 'post') %></span>
+			</div>
+		</div>
+		<hr>
+	</div>
+
+	<div class="prof_post_box">
+		<div class="row">
+			<% @user.posts.each do |post| %>
+				<div class="col-xs-6">
+					<%= image_tag post.photo %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

@@ -60,5 +60,5 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  routes :users, only: :show
+  resources :users, only: :show
 end

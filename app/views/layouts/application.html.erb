@@ -1,28 +1,98 @@
+<!--
 <!DOCTYPE html>
 <html>
 <head>
   <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
   <title>Instapost</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 
 <nav>
-	<span class="pull-right brand">Instapost</span>
-	<% if user_signed_in? %>
-		<%= link_to 'New Post', new_post_path %>
-		<%= link_to 'Edit Settings', edit_user_registration_path %>
-		<%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-	<% else %>
-		<%= link_to 'Sign up', new_user_registration_path %>
-		<%= link_to 'Log in', new_user_session_path %>
-	<% end %>
+	<div class="row">
+	   <div class="nav_wrapper">
+			<div class="col-md-4">
+				<span class="pull-left brand"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> | 
+<%= link_to 'Instapost', root_path %></span>
+			</div>
+
+			<div class="col-md-4">
+			    <div class="input-group">
+			      <span class="input-group-btn">
+			        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+			        <input type="search" class="form-control" placeholder="Search">
+			        </span>
+			    </div>
+	  		</div>
+
+			<div class="col-md-4 middle">
+				<% if user_signed_in? %>
+					<span class="nav_links pull-right"><%= link_to 'New Post', new_post_path %></span>
+					<span class="nav_links pull-right"><%= link_to 'Edit Settings', edit_user_registration_path %></span>
+					<span class="nav_links pull-right"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></span>
+				<% else %>
+					<%= link_to 'Sign up', new_user_registration_path %>
+					<%= link_to 'Log in', new_user_session_path %>
+				<% end %>
+			</div>
+		</div>
+	</div>
 </nav>
 
 <%= yield %>
 
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <title>Instapost</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav>
+    <div class="row">
+       <div class="nav_wrapper">
+            <div class="col-md-4">
+                <span class="pull-left brand"><i class="fa fa-instagram" aria-hidden="true"></i>
+ | <%= link_to 'Instapost', root_path %></span>
+            </div>
+            <div class="col-md-4">
+				<div class="row">
+					<div class="input-group">
+						  <!-- <div class="col-xs-3" style="height: 50px; width: 35px;">
+						  	<i class="fa fa-search" aria-hidden="true"></i>
+						  </div> -->
+						  <div class="col-xs-12">
+						  	<input type="search" class="form-control wrapper" placeholder="&#61447; Search" style="margin-top: 22px; border-radius:25px;">					   
+ 						</div> 
+					</div>
+				</div>
+            </div>
+            <div class="col-md-4 middle">
+                <% if user_signed_in? %>
+                    <span class="nav_links pull-right"><%= link_to 'New Post', new_post_path %></span>
+                    <span class="nav_links pull-right"><%= link_to 'Edit Settings', edit_user_registration_path %></span>
+                    <span class="nav_links pull-right"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></span>
+                <% else %>
+                    <%= link_to 'Sign up', new_user_registration_path %>
+                    <%= link_to 'Log in', new_user_session_path %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</nav>
+<%= yield %>
 </body>
 </html>
