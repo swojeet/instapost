@@ -1,5 +1,5 @@
 body {
-	background-color: #FAFAFA;
+	background-color: #fafafa;
 }
 
 nav {
@@ -26,10 +26,13 @@ nav {
 }
 
 .photo{
-	width: 600px;
-	height: 600px;
-	position: relative;
+	/*position: relative;*/
 	margin-top: 20px;
+	display: block;
+  	max-width:598px;
+  	max-height:598px;
+  	width: auto;
+  	height: auto;
 }
 
 .post_box{
@@ -37,7 +40,8 @@ nav {
 	border: 1px solid #edeeee;
 	max-width: 600px;
 	margin: 0 auto;
-	margin-top: 30px;
+	margin-top: 70px;
+
 }
 
 .post_header{
@@ -46,8 +50,12 @@ nav {
 	font-weight: 600;
 }
 
-.post_body{
+.post_body {
 	padding: 10px 24px 0px 24px;
+}
+
+#options{
+	margin:10px 24px 0px 24px;
 }
 
 .post_comments {
@@ -147,4 +155,15 @@ input { font-family: 'FontAwesome'; }
 	text-align: center;
 	font-family: 'Indie Flower';
 	font-weight: 600;
+}
+
+#post_button{
+	width: 100px;
+	margin: 0 auto;
+}
+
+.user_profile_photos{
+	height: 300px;
+	width: 300px;
+	margin-bottom: 15px;
 }

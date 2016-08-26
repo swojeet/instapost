@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
 	end
 
 	def destroy
-		@comment = Comment.find(:id)
+		@comment = Comment.find(params[:id])
 		@comment.destroy
 		redirect_to root_path
 	end
@@ -27,6 +27,8 @@ class CommentsController < ApplicationController
 	end
 
 	def is_owner?
-		redirect_to root_path if @comment.user != current_user
+		if @comment.user != current_user
+			redirect_to root_path 
+		end
 	end
 end

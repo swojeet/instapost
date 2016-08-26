@@ -18,7 +18,7 @@
 					</div>
 				</div>
 
-				<span class="count"><%= pluralize(@user.posts.count, 'post') %></span>
+				<span class="count pull-right"><%= pluralize(@user.posts.count, 'post') %></span>
 			</div>
 		</div>
 		<hr>
@@ -27,8 +27,8 @@
 	<div class="prof_post_box">
 		<div class="row">
 			<% @user.posts.each do |post| %>
-				<div class="col-xs-6">
-					<%= image_tag post.photo %>
+				<div class="col-xs-4">
+					 <%= link_to image_tag((post.photo), class: 'user_profile_photos'), post_path(post.id) %>
 				</div>
 			<% end %>
 		</div>
