@@ -19,9 +19,9 @@
 						<% if user_signed_in? && current_user.id != @user.id %>
 							<span class="user_follow">
 								<% if current_user.following?(@user) %>
-									<%= link_to '<button id="following_button">Following</button>'.html_safe, follow_path,method: :delete %>
+									<%= link_to '<button id="following_button">Following</button>'.html_safe, user_follow_path(user_id: @user.id),method: :delete %>
 								<% else %>
-									<%= link_to '<button id="follow_button">Follow</button>'.html_safe, follow_index_path,method: :post %>
+									<%= link_to '<button id="follow_button">Follow</button>'.html_safe, user_follows_path(user_id: @user.id), method: :post %>
 								<% end %>
 							</span>
 						<% end %>

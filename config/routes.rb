@@ -63,7 +63,7 @@ Rails.application.routes.draw do
     resources :downvotes, only: :create
   end
 
-  resources :users, only: :show
-
-  resources :follow, only: [:create, :destroy]
+  resources :users, only: :show do
+    resources :follows, only: [:create, :destroy]
+  end
 end
