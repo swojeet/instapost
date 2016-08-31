@@ -9,28 +9,31 @@
 				<div class="user_header">
 					<div class="row">
 						<div class="username">
-							<h1><%= @user.name %></h1>
+							<%= @user.name %>
+							<% if user_signed_in? && current_user.id != @user.id %>
+								<span class="user_follow">
+									<% if current_user.following?(@user) %>
+										<%= link_to '<button id="following_button">Following</button>'.html_safe, user_follow_path(user_id: @user.id),method: :delete %>
+									<% else %>
+										<%= link_to '<button id="follow_button">Follow</button>'.html_safe, user_follows_path(user_id: @user.id), method: :post %>
+									<% end %>
+								</span>
+							<% end %>
 						</div>
 
 						<div class="col-xs-6">
 							<%= link_to 'Edit Profile', edit_user_registration_path(@user), class: 'user_edit_button btn btn-default bold_black' if user_signed_in? && @user==current_user %>
 						</div>
 
-						<% if user_signed_in? && current_user.id != @user.id %>
-							<span class="user_follow">
-								<% if current_user.following?(@user) %>
-									<%= link_to '<button id="following_button">Following</button>'.html_safe, user_follow_path(user_id: @user.id),method: :delete %>
-								<% else %>
-									<%= link_to '<button id="follow_button">Follow</button>'.html_safe, user_follows_path(user_id: @user.id), method: :post %>
-								<% end %>
-							</span>
-						<% end %>
 
-						<%= @user.follow_count %>
 					</div>
 				</div>
 
-				<span class="count pull-right"><%= pluralize(@user.posts.count, 'post') %></span>
+				<ul class="followers_following_lists">
+					<li class="lists"><%= pluralize(@user.posts.count, 'post') %></li>
+					<li class="lists"><%= @user.followers_count %> Followers</li>
+					<li class="lists"><%= @user.follow_count %> Following</li>
+				</ul>
 			</div>
 		</div>
 		<hr>

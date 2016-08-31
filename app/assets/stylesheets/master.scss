@@ -1,5 +1,5 @@
 body {
-	background-color: #fafafa;
+	background-color: #fafafa !important;
 }
 
 nav {
@@ -114,7 +114,8 @@ input { font-family: 'FontAwesome'; }
 	color: #4b4f54;
 	font-weight: 300;
 	font-size: 34px;
-	line-height: 40px;
+	line-height: 50px;
+	vertical-align: middle;
 }
 
 .count{
@@ -133,9 +134,10 @@ input { font-family: 'FontAwesome'; }
 }
 
 .user_edit_button {
-	margin-top: 25px;
+	margin-top: 15px;
 	border-color: #818488;
 	color: #818488;
+	margin-bottom: 15px;
 }
 
 .post_like {
@@ -166,6 +168,10 @@ input { font-family: 'FontAwesome'; }
 	height: 300px;
 	width: 300px;
 	margin-bottom: 15px;
+}
+
+.user_follow{
+	margin-bottom: 20px;
 }
 
 #follow_button{
@@ -204,4 +210,16 @@ input { font-family: 'FontAwesome'; }
 
 .pagination{
 	display: none !important;
+}
+
+.followers_following_lists{
+	list-style-type:none;
+	padding-left: 0px;
+}
+
+.lists{
+	font-size: 17px;
+    margin-right: 40px;
+	display: inline;
+
 }
