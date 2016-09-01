@@ -66,3 +66,5 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'font-awesome-sass', '~> 4.6.2'
  
 gem 'will_paginate', '~> 3.1.0'
+
+gem 'acts_as_follower'
