@@ -10,4 +10,11 @@ class User < ActiveRecord::Base
   has_many :comments
 
   acts_as_voter
+
+  acts_as_followable
+
+  acts_as_follower
+
+  has_many :followers
+
 end

@@ -1,0 +1,8 @@
+<div class="post_box">
+	<h1 id="heading">Followers</h1>
+	<div class="name_list">
+		<% @user.each do |follower| %>
+			<%= image_tag follower.photo, class: 'prof_pic_small' %><%= link_to follower.name, user_path(id: follower.id),class: 'bold_black' %><hr>
+		<% end %>
+	</div>
+</div>
