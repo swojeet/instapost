@@ -10,8 +10,10 @@
 
 <ul class="followers_following_lists">
 	<li class="lists bold_black"><%= pluralize(@user.posts.count, 'post') %></li>
+
 	<% if user_signed_in? %>
 		<li class="lists bold_black"><%= @user.followers_count %> <%= link_to 'Followers', user_follower_path(user_id: @user.id, id: current_user.id ) %></li>
 		<li class="lists bold_black"><%= @user.follow_count %> <%= link_to 'Following', user_following_path(user_id: @user.id, id: current_user.id) %></li>
 	<% end %>
+
 </ul>
