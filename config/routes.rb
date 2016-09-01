@@ -65,5 +65,7 @@ Rails.application.routes.draw do
 
   resources :users, only: :show do
     resources :follows, only: [:create, :destroy]
+    resources :followers, only: :show
+    resources :followings, only: :show
   end
 end

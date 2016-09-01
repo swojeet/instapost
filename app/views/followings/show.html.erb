@@ -1,0 +1,6 @@
+<div class="post_box">
+	<h1 id="heading">Following</h1>
+	<% @user.each do |following| %>
+		<%= image_tag following.photo,class: 'prof_pic_small' %><%= link_to following.name, user_path(id: following.id),class:'bold_black' %> <hr>
+	<% end %>
+</div>
