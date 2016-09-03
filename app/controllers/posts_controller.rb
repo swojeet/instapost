@@ -18,7 +18,8 @@ class PostsController < ApplicationController
 
 	def create
 		@post = current_user.posts.create(post_params)
-		#@post = current_user.posts.update_attributes(params[:post])
+		#@post = current_user.posts.update_attributes(post_params)
+		@post.save!
 		if @post.valid?
 			redirect_to root_path
 		else
@@ -32,8 +33,8 @@ class PostsController < ApplicationController
 
 	def update
 		@post = Post.find(params[:id])
-		@post.update(post_params)
-		#@post.update_attributes(params[:post])
+		#@post.update(post_params)
+		@post.update_attributes(post_params)
 		if @post.valid?
 			redirect_to root_path
 		else

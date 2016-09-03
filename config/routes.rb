@@ -68,4 +68,8 @@ Rails.application.routes.draw do
     resources :followers, only: :show
     resources :followings, only: :show
   end
+
+
+  mount Attachinary::Engine => "/attachinary"
+
 end

@@ -1,15 +1,10 @@
 <div class="post_box"> 
 	<h1 id="heading">Edit Post</h1>
-
-<!-- 	<%= simple_form_for @post do |f| %>
-		<%= f.input :photo %>
-		<%= f.input :description %>
-		<%= f.submit 'Update', class: 'btn btn-default btn-block',id:'post_button' %>
-	<% end %> -->
-
-	<%= simple_form_for @post do |post_form| %>
+	<%= simple_form_for(:post) do |post_form| %>
 		<%= post_form.hidden_field(:photo_cache) %>
 		<%= post_form.file_field(:photo) %>
+		<%= post_form.input :description %>
+		<%= post_form.submit 'Update', class: 'btn btn-default btn-block',id:'post_button' %>
 	<% end %>
 </div>
 

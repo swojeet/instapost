@@ -57,6 +57,7 @@ gem 'devise'
 
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'attachinary'
 
 gem 'simple_form'
 

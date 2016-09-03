@@ -17,4 +17,9 @@ class User < ActiveRecord::Base
 
   has_many :followers
 
+  has_attachment  :avatar, accept: [:jpg, :png, :gif]
+  has_attachments :photos, maximum: 10
+
+  validates :avatar, presence: true
+
 end

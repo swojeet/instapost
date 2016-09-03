@@ -16,7 +16,6 @@ class PhotoUploader < CarrierWave::Uploader::Base
   end
 
   version :thumbnail do
-    eager
     resize_to_fit(50, 50)
   end
 
