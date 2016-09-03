@@ -18,14 +18,13 @@ class PostsController < ApplicationController
 
 	def create
 		@post = current_user.posts.create(post_params)
+		#@post = current_user.posts.update_attributes(params[:post])
 		if @post.valid?
 			redirect_to root_path
 		else
 			render :new, status: :inprocessable_entity
 		end
 	end
-
-	
 
 	def edit
 		@post= Post.find(params[:id])
@@ -34,6 +33,7 @@ class PostsController < ApplicationController
 	def update
 		@post = Post.find(params[:id])
 		@post.update(post_params)
+		#@post.update_attributes(params[:post])
 		if @post.valid?
 			redirect_to root_path
 		else
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
 		redirect_to root_path
 	end
 
-
+	private
 
 	def is_owner?
 		redirect_to root_path if Post.find(params[:id]).user != current_user
@@ -58,6 +58,5 @@ class PostsController < ApplicationController
 	def post_params
 		params.require(:post).permit(:user_id, :photo, :description)
 	end
-
 
 end
