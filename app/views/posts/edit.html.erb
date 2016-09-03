@@ -1,16 +1,14 @@
 <div class="post_box"> 
 	<h1 id="heading">Edit Post</h1>
 
-<!-- 	<%= simple_form_for @post do |f| %>
+	<%= simple_form_for @post do |f| %>
 		<%= f.input :photo %>
 		<%= f.input :description %>
 		<%= f.submit 'Update', class: 'btn btn-default btn-block',id:'post_button' %>
-	<% end %> -->
-
+	<% end %>
+<!-- 
 	<%= simple_form_for @post do |post_form| %>
 		<%= post_form.hidden_field(:photo_cache) %>
 		<%= post_form.file_field(:photo) %>
-	<% end %>
+	<% end %> -->
 </div>
-
-<%= cloudinary_js_config %> 

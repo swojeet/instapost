@@ -1,11 +1,8 @@
-<div class="post_box"> 
+<div class="post_box">
 	<h1 id="heading">New Post</h1>
 	<%= simple_form_for @post do |f| %>
-		<%= cl_image_upload_tag(:photo_id, :crop => :limit, :width => 1000, :height => 1000, :html => {:class => "image_upload"}) %>
-
+	  	<%= f.input :photo %>
 		<%= f.input :description %>
 		<%= f.submit 'Post', class: 'btn btn-default btn-block', id: 'post_button' %>
 	<% end %>
 </div>
-
-<%= cloudinary_js_config %> 
