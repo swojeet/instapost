@@ -15,6 +15,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require cloudinary 
+
 
 $(document).ready(function() {
   if ($('.pagination').length) {
@@ -28,3 +30,4 @@ $(document).ready(function() {
     return $(window).scroll();
   }
 });
+

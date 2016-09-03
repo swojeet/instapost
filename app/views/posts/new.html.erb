@@ -1,7 +1,7 @@
-<div class="post_box"> 
+<div class="post_box">
 	<h1 id="heading">New Post</h1>
 	<%= simple_form_for @post do |f| %>
-		<%= f.input :photo %>
+	  	<%= f.input :photo %>
 		<%= f.input :description %>
 		<%= f.submit 'Post', class: 'btn btn-default btn-block', id: 'post_button' %>
 	<% end %>
